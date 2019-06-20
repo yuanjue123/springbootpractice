@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f55c5581-10e4-4163-b2e6-fc985e71dd5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eg-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/UserApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/dto/UserPro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eg-product/src/main/java/com/springbootpractice/egproduct/web/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eg-user/eg-user.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eg-user/src/main/java/com/springbootpractice/eguser/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eg-user/src/main/java/com/springbootpractice/eguser/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-eureka/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-eureka/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-product/src/main/java/com/springbootpractice/egproduct/EgProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/src/main/java/com/springbootpractice/egproduct/EgProductApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eg-user/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-user/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eg-zuul/src/main/java/com/springbootpractice/egzuul/filter/MyFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hystrix-dashbard/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -229,15 +211,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="eg-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eg-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="springbootpractice" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -290,6 +263,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
