@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f55c5581-10e4-4163-b2e6-fc985e71dd5d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../eg-zuul/src/main/java/com/springbootpractice/egzuul/filter/MyFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hystrix-dashbard/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eg-product/src/main/java/com/springbootpractice/egproduct/endpoint/DBCheckEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eg-product/src/main/java/com/springbootpractice/egproduct/health/WWWHealthIndicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eg-zuul/src/main/java/com/springbootpractice/egzuul/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../eg-zuul/src/main/resources/banner.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eg-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eg-product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eg-product/src/test/java/com/springbootpractice/egproduct/EgProductApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-product/src/test/java/com/springbootpractice/egproduct/EgProductApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eg-user/src/test/java/com/springbootpractice/eguser/EgUserApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-user/src/test/java/com/springbootpractice/eguser/EgUserApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eg-zuul/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eg-zuul/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,7 +41,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="242">
               <caret line="30" column="100" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,7 +111,7 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -262,7 +269,7 @@
     <option name="totallyTimeSpent" value="1576000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -343,7 +350,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="242">
           <caret line="30" column="100" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
