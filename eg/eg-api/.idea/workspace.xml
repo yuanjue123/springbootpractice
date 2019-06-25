@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f55c5581-10e4-4163-b2e6-fc985e71dd5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/java/com/springbootpractice/demomiaosha/bean/PurchaseRequestParam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/java/com/springbootpractice/demomiaosha/bean/ResponseBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/java/com/springbootpractice/demomiaosha/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/java/com/springbootpractice/demomiaosha/web/PurchaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo-miaosha/src/main/resources/init.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +37,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
+            <state relative-caret-position="566">
               <caret line="30" column="100" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -102,7 +107,7 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="26" />
     <option name="width" value="1280" />
     <option name="height" value="1024" />
@@ -114,7 +119,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +219,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,16 +260,17 @@
       <updated>1561019374748</updated>
       <workItem from="1561019379129" duration="1576000" />
       <workItem from="1561121100177" duration="241000" />
+      <workItem from="1561455986377" duration="10000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1817000" />
+    <option name="totallyTimeSpent" value="1827000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="1280" height="1024" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3352181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33943835" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -291,7 +297,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.4361874" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.43589744" />
       <window_info anchor="right" id="PlantUML" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
@@ -330,7 +336,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springbootpractice/api/user/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
+        <state relative-caret-position="566">
           <caret line="30" column="100" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
           <folding>
             <element signature="imports" expanded="true" />
