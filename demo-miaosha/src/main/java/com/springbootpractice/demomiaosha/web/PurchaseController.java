@@ -5,7 +5,11 @@ import com.springbootpractice.demomiaosha.bean.ResponseBean;
 import com.springbootpractice.demomiaosha.dao.model.ProductEntity;
 import com.springbootpractice.demomiaosha.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;

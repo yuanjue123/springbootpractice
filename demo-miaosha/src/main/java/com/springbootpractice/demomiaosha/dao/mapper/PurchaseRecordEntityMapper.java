@@ -2,9 +2,10 @@ package com.springbootpractice.demomiaosha.dao.mapper;
 
 import com.springbootpractice.demomiaosha.dao.model.PurchaseRecordEntity;
 import com.springbootpractice.demomiaosha.dao.model.PurchaseRecordEntityCriteria;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface PurchaseRecordEntityMapper {
