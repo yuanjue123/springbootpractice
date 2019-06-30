@@ -223,4 +223,12 @@
       memo = #{memo,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectByPessimisticLock" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from product where id=#{id} for update
+  </select>
+  <update id="updateByOptimisticLock"  parameterType="map">
+    update product set store_qty=store_qty-#{record.storeQty} ,version=#{record.version} +1
+    where id=#{record.id} and version=#{record.version}
+  </update>
 </mapper>

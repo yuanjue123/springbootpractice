@@ -28,10 +28,8 @@ public class DemoMiaoshaApplicationTests {
      VALUES (1,'乐心5SE手环',50000,99.0,0,'乐心5SE秒杀活动');
      */
     @Test
-    public void contextLoads() {
-
-
-        LongStream.rangeClosed(1,50000).parallel().forEach(item->{
+    public void testNormalBuy() {
+        LongStream.rangeClosed(1,20000).parallel().forEach(item->{
 
             PurchaseRequestParam purchaseRequestParam = new PurchaseRequestParam();
             purchaseRequestParam.setProductId(1L);
@@ -44,10 +42,53 @@ public class DemoMiaoshaApplicationTests {
             log.info("{} --->  秒杀参数：{} ,  秒杀结果：{} " , item, purchaseRequestParam.toString(), responseBean.toString());
 
         });
-
-
-
-
     }
+
+    /**
+     *
+     insert into product(id, product_name, store_qty, product_price, version, memo)
+     VALUES (1,'乐心5SE手环',50000,99.0,0,'乐心5SE秒杀活动');
+     */
+    @Test
+    public void testPurchaseByPessimisticLock() {
+        LongStream.rangeClosed(1,50000).parallel().forEach(item->{
+
+            PurchaseRequestParam purchaseRequestParam = new PurchaseRequestParam();
+            purchaseRequestParam.setProductId(2L);
+            final Long qty = item%2;
+            purchaseRequestParam.setQty(qty.intValue()+1);
+            purchaseRequestParam.setUserId(item);
+            purchaseRequestParam.setMethodType("PessimisticLock");
+
+            final ResponseBean responseBean = testRestTemplate.postForObject("/purchase", purchaseRequestParam, ResponseBean.class);
+
+            log.info("{} --->  秒杀参数：{} ,  秒杀结果：{} " , item, purchaseRequestParam.toString(), responseBean.toString());
+
+        });
+    }
+
+
+    /**
+     *
+     insert into product(id, product_name, store_qty, product_price, version, memo)
+     VALUES (1,'乐心5SE手环',50000,99.0,0,'乐心5SE秒杀活动');
+     */
+    @Test
+    public void testPurchaseByOptimisticLock() {
+        LongStream.rangeClosed(1,30000).parallel().forEach(item->{
+
+            PurchaseRequestParam purchaseRequestParam = new PurchaseRequestParam();
+            purchaseRequestParam.setProductId(3L);
+            purchaseRequestParam.setQty(1);
+            purchaseRequestParam.setUserId(item*3);
+            purchaseRequestParam.setMethodType("OptimisticLock");
+
+            final ResponseBean responseBean = testRestTemplate.postForObject("/purchase", purchaseRequestParam, ResponseBean.class);
+
+            log.info("{} --->  秒杀参数：{} ,  秒杀结果：{} " , item, purchaseRequestParam.toString(), responseBean.toString());
+
+        });
+    }
+
 
 }

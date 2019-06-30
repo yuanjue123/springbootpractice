@@ -7,6 +7,10 @@ import com.springbootpractice.demomiaosha.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * @author <a href="mailto:505847426@qq.com">carterbrother</a>
  * @description Rest接口
@@ -21,11 +25,36 @@ public class PurchaseController {
 
     @PostMapping(path = "/purchase")
     public ResponseBean purchase(@RequestBody PurchaseRequestParam param){
-        boolean success = purchaseService.purchaseNormal(param.getUserId(),param.getProductId(),param.getQty());
+
+        AtomicBoolean success = new AtomicBoolean(false);
+
+        switch (param.getMethodType()){
+            case "PessimisticLock":{
+                success.set(purchaseService.purchaseByPessimisticLock(param.getUserId(),param.getProductId(),param.getQty()));
+                break;
+            }
+            case "OptimisticLock":{
+                AtomicInteger i=new AtomicInteger(1);
+                while (i.getAndIncrement()<=3 && Objects.equals(success.get(),false)){
+                    try {
+                        success.set(purchaseService.purchaseByOptimisticLock(param.getUserId(), param.getProductId(), param.getQty()));
+                    }catch (Exception ex){
+                        success.set(false);
+                    }
+                }
+                break;
+            }
+            default:{
+                success.set(purchaseService.purchaseNormal(param.getUserId(),param.getProductId(),param.getQty()));
+                break;
+            }
+
+
+        }
 
         ResponseBean responseBean = new ResponseBean();
-        responseBean.setSuccess(success);
-        responseBean.setMessage(success?"秒杀成功":"秒杀失败");
+        responseBean.setSuccess(success.get());
+        responseBean.setMessage(success.get()?"秒杀成功":"秒杀失败");
 
         responseBean.setData(System.currentTimeMillis());
 

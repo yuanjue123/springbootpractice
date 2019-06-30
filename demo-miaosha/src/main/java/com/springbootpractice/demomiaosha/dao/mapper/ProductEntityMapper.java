@@ -29,4 +29,18 @@ public interface ProductEntityMapper {
     int updateByPrimaryKeySelective(ProductEntity record);
 
     int updateByPrimaryKey(ProductEntity record);
+
+    /**
+     * 悲观锁查询
+     * @param productId 产品id
+     * @return 得到的产品信息
+     */
+    ProductEntity selectByPessimisticLock(@Param("id") Long productId);
+
+    /**
+     * 乐观锁更新
+     * @param updateParam 更新实体，有效内容 id,version,storeQty
+     * @return 更新影响的行数
+     */
+    int updateByOptimisticLock(@Param("record") ProductEntity updateParam);
 }

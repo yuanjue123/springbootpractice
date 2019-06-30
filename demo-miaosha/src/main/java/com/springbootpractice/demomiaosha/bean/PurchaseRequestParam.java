@@ -16,5 +16,6 @@ public class PurchaseRequestParam implements Serializable {
     private Long userId;
     private Long productId;
     private Integer qty;
+    private String  methodType="normal";
 
 }
