@@ -18,7 +18,10 @@ public class AppLombok extends Something {
     }
 
     public static void main(String[] args) {
-        new AppLombok(null);
+//        new AppLombok(null);
+        final Person person = new Person(null, 20);
+        new AppLombok(person);
+        System.out.println(person.getName());
     }
 
 
