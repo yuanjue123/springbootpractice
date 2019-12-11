@@ -1,8 +1,13 @@
 package com.example.application;
 
 import com.example.param.Person;
+import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Singleton;
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -16,6 +21,7 @@ import java.util.Objects;
 @Path("myresource")
 @Singleton
 @Produces(MediaType.APPLICATION_JSON)
+@Log4j2
 public final class MyResource {
 
     /**
@@ -25,7 +31,6 @@ public final class MyResource {
      * @return String that will be returned as a text/plain response.
      */
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
         return "Got it!".concat(Objects.toString(this));
     }
@@ -33,10 +38,25 @@ public final class MyResource {
     @GET
     @Path("/getPerson")
     @Produces(MediaType.APPLICATION_JSON)
-    public Person getPerson() {
-        final Person person = new Person();
+    public Person getPerson(Person person) {
+
+        System.out.println("xxx");
+
         person.setName("carter");
         person.setAge(31);
         return person;
     }
+
+    @GET
+    @Path("ex")
+    public Object ex() {
+        return 1/0;
+    }
+
+    @GET
+    @Path("person")
+    public Person person() {
+        return Person.builder().name("aa").age(190).build();
+    }
+
 }

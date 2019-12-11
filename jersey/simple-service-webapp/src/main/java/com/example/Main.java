@@ -1,11 +1,14 @@
 package com.example;
 
+import com.example.application.ExceptionHandler;
+import com.example.application.ResponseHandler;
 import com.example.config.ObjectMapperResolver;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.internal.inject.InjectionManager;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.ServerProperties;
 
 import javax.ws.rs.ApplicationPath;
 import java.io.IOException;
@@ -26,6 +29,10 @@ public class Main extends ResourceConfig {
         packages(Main.class.getPackage().getName());
         register(ObjectMapperResolver.class);
         register(JacksonFeature.withExceptionMappers());
+        property(ServerProperties.BV_DISABLE_VALIDATE_ON_EXECUTABLE_OVERRIDE_CHECK,true);
+        property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
+        register(ResponseHandler.class);
+        register(ExceptionHandler.class);
 
 
     }
