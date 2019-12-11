@@ -1,29 +1,45 @@
 package com.example.application;
 
-import javax.inject.Singleton;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import java.util.Objects;
+import lombok.Cleanup;
+import lombok.extern.log4j.Log4j2;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- * Root resource (exposed at "myresource" path)
+ * helloworld 接口
+ * @author carter
  */
-@Path("helloWorld/{username}")
-@Singleton
-public class HelloWorld {
+@Log4j2
+public class HelloWorld extends HttpServlet {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt(@PathParam("username") String username) {
-        return "Got it! ==> ".concat(username).concat(" ==>").concat(Objects.toString(this));
+    private static final long serialVersionUID = 1768961638115010461L;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doService(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doService(req, resp);
+    }
+
+    private void doService(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        log.info("hello world coming into servlet ... ");
+
+        final String appName = req.getServletContext().getInitParameter("appName");
+
+        log.info("appName:{}", appName);
+
+        @Cleanup final PrintWriter writer = resp.getWriter();
+        writer.write("hello world , servlet 4");
+
+    }
+
 }
