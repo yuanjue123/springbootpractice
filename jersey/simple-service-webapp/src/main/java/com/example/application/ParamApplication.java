@@ -40,12 +40,12 @@ public class ParamApplication {
         return "Got it! ".concat(" a=").concat(a).concat(" , b= ").concat(b);
     }
 
-    @GET
-    @Path("btest")
-    public String btest(@DefaultValue("aaa") @QueryParam("a") String a,
-                        @DefaultValue("lifuchun:31") @QueryParam("b") Person person) {
-        return "Got it! ".concat(" a=").concat(a).concat(" , b= ").concat(Objects.toString(person));
-    }
+//    @GET
+//    @Path("btest")
+//    public String btest(@DefaultValue("aaa") @QueryParam("a") String a,
+//                        @DefaultValue("lifuchun:31") @QueryParam("b") Person person) {
+//        return "Got it! ".concat(" a=").concat(a).concat(" , b= ").concat(Objects.toString(person));
+//    }
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)

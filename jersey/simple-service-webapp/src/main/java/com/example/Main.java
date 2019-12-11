@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.application.ExceptionHandler;
 import com.example.application.ResponseHandler;
+import com.example.application.ValidExceptionHandler;
 import com.example.config.ObjectMapperResolver;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -33,6 +34,7 @@ public class Main extends ResourceConfig {
         property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
         register(ResponseHandler.class);
         register(ExceptionHandler.class);
+        register(ValidExceptionHandler.class);
 
 
     }

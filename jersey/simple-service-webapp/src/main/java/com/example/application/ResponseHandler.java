@@ -2,12 +2,15 @@ package com.example.application;
 
 import com.example.param.RestResponse;
 import org.glassfish.grizzly.http.util.HttpStatus;
+import org.glassfish.grizzly.utils.Pair;
+import org.glassfish.jersey.internal.guava.Maps;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -38,10 +41,12 @@ public class ResponseHandler implements ContainerResponseFilter {
             return;
         }
 
+        Map<String,Object> dataMap = Maps.newHashMapWithExpectedSize(1);
+        dataMap.put(responseContextEntity.getClass().getSimpleName(),responseContextEntity);
         responseContext.setEntity(RestResponse.builder()
                 .code(HttpStatus.OK_200.getStatusCode())
                 .message("success")
-                .data(responseContextEntity)
+                .data(dataMap)
                 .build());
 
 

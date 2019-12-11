@@ -20,6 +20,7 @@ import javax.validation.constraints.NotEmpty;
  **/
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @ApiModel("人实体")
 public class Person {
@@ -32,18 +33,18 @@ public class Person {
     @Max(value = 150,message = "age cant not beyond 150")
     private Integer age;
 
-    public Person() {
-    }
+//    public Person() {
+//    }
 
-    public Person(@NonNull String str) {
-
-        final String[] splitArray = str.split(":", 2);
-
-        assert splitArray.length == 2 : "字符串没有按照格式a:b给出";
-
-        setName(splitArray[0]);
-        setAge(Integer.parseInt(splitArray[1]));
-
-    }
+//    public Person(@NonNull String str) {
+//
+//        final String[] splitArray = str.split(":", 2);
+//
+//        assert splitArray.length == 2 : "字符串没有按照格式a:b给出";
+//
+//        setName(splitArray[0]);
+//        setAge(Integer.parseInt(splitArray[1]));
+//
+//    }
 
 }
