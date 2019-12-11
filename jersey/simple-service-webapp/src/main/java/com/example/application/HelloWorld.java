@@ -4,6 +4,7 @@ import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import java.io.PrintWriter;
  * @author carter
  */
 @Log4j2
+@WebServlet(value = "/helloWorld",loadOnStartup = 1)
 public class HelloWorld extends HttpServlet {
 
     private static final long serialVersionUID = 1768961638115010461L;
