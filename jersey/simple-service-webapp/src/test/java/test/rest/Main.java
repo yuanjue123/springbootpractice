@@ -1,43 +1,21 @@
-package com.example;
+package test.rest;
 
-import com.example.application.ExceptionHandler;
-import com.example.application.ResponseHandler;
-import com.example.application.ValidExceptionHandler;
-import com.example.config.ObjectMapperResolver;
+import com.example.AppResourceConfig;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
-import org.glassfish.jersey.internal.inject.InjectionManager;
-import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.ServerProperties;
 
-import javax.ws.rs.ApplicationPath;
 import java.io.IOException;
 import java.net.URI;
 
 /**
- * 说明：提供命令行的方式启动web服务，并进行快速测试,快速开发
+ * 说明：TODO
  * @author carter
- * 创建时间： 2019年12月04日 17:29
+ * 创建时间： 2019年12月12日 10:56 上午
  **/
-@ApplicationPath("/*")
-public class Main extends ResourceConfig {
 
-    public Main() {
-        super();
+public class Main {
 
-        super.setApplicationName("simple-service-webapp");
-        packages(Main.class.getPackage().getName());
-        register(ObjectMapperResolver.class);
-        register(JacksonFeature.withExceptionMappers());
-        property(ServerProperties.BV_DISABLE_VALIDATE_ON_EXECUTABLE_OVERRIDE_CHECK,true);
-        property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE,true);
-        register(ResponseHandler.class);
-        register(ExceptionHandler.class);
-        register(ValidExceptionHandler.class);
-
-
-    }
 
     /**
      * @return 配置本地的ip, 端口，应用的contextPath,可以写死，也可以用通过命令行传递，优先命令行
@@ -51,7 +29,7 @@ public class Main extends ResourceConfig {
      */
     public static HttpServer startServer() {
 
-        ResourceConfig resourceConfig = new Main();
+        ResourceConfig resourceConfig = new AppResourceConfig();
 
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(getBaseUri()), resourceConfig);
 
@@ -77,6 +55,5 @@ public class Main extends ResourceConfig {
         httpServer.shutdownNow();
 
     }
-
 
 }

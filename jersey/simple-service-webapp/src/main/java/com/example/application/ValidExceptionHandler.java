@@ -1,7 +1,6 @@
 package com.example.application;
 
 import com.example.param.RestResponse;
-import org.glassfish.grizzly.http.util.HttpStatus;
 
 import javax.validation.ConstraintViolationException;
 import javax.validation.ValidationException;
@@ -30,7 +29,7 @@ public class ValidExceptionHandler implements ExceptionMapper<ValidationExceptio
         return Response.ok()
                 .type(MediaType.APPLICATION_JSON)
                 .entity(RestResponse.builder()
-                        .code(HttpStatus.BAD_REQUEST_400.getStatusCode())
+                        .code(400)
                         .message(errorMsg).build())
                 .build();
     }

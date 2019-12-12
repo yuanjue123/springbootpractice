@@ -34,7 +34,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.example.Main</mainClass>
+                    <mainClass>com.example.AppResourceConfig</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -76,6 +76,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-grizzly2-http</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -88,7 +89,7 @@
 
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
-             <artifactId>jersey-container-servlet</artifactId>
+            <artifactId>jersey-container-servlet</artifactId>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
@@ -105,15 +106,15 @@
             <artifactId>jersey-bean-validation</artifactId>
             <exclusions>
                 <exclusion>
-                    <groupId>org.hibernate</groupId>
+                    <groupId>org.hibernate.validator</groupId>
                     <artifactId>hibernate-validator</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.glassfish.jersey.ext</groupId>-->
-<!--            <artifactId>jersey-spring5</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.glassfish.jersey.ext</groupId>-->
+        <!--            <artifactId>jersey-spring5</artifactId>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

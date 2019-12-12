@@ -1,8 +1,6 @@
 package com.example.application;
 
 import com.example.param.RestResponse;
-import org.glassfish.grizzly.http.util.HttpStatus;
-import org.glassfish.grizzly.utils.Pair;
 import org.glassfish.jersey.internal.guava.Maps;
 
 import javax.ws.rs.container.ContainerRequestContext;
@@ -25,14 +23,14 @@ public class ResponseHandler implements ContainerResponseFilter {
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
 
 
-        responseContext.setStatus(HttpStatus.OK_200.getStatusCode());
+        responseContext.setStatus(200);
 
 
         final Object responseContextEntity = responseContext.getEntity();
 
 
         if (Objects.isNull(responseContextEntity)) {
-            responseContext.setEntity(RestResponse.builder().code(HttpStatus.OK_200.getStatusCode()).message("success").build());
+            responseContext.setEntity(RestResponse.builder().code(200).message("success").build());
             return;
         }
 
@@ -41,10 +39,10 @@ public class ResponseHandler implements ContainerResponseFilter {
             return;
         }
 
-        Map<String,Object> dataMap = Maps.newHashMapWithExpectedSize(1);
-        dataMap.put(responseContextEntity.getClass().getSimpleName(),responseContextEntity);
+        Map<String, Object> dataMap = Maps.newHashMapWithExpectedSize(1);
+        dataMap.put(responseContextEntity.getClass().getSimpleName(), responseContextEntity);
         responseContext.setEntity(RestResponse.builder()
-                .code(HttpStatus.OK_200.getStatusCode())
+                .code(200)
                 .message("success")
                 .data(dataMap)
                 .build());

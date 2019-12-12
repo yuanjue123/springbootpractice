@@ -1,6 +1,6 @@
 package test.rest;
 
-import com.example.Main;
+import com.example.AppResourceConfig;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
