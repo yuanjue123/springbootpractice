@@ -1,4 +1,4 @@
-package com.example.application;
+package com.example.config;
 
 import com.example.param.RestResponse;
 import org.apache.logging.log4j.core.util.Throwables;

@@ -1,4 +1,4 @@
-package com.example.application;
+package com.example.config;
 
 import com.example.param.RestResponse;
 
@@ -8,6 +8,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -23,7 +24,10 @@ public class ValidExceptionHandler implements ExceptionMapper<ValidationExceptio
 
         final ConstraintViolationException violationException = (ConstraintViolationException) exception;
         final String errorMsg = violationException.getConstraintViolations().stream()
-                .map(item -> item.getPropertyPath().toString().concat("(").concat(item.getMessage()).concat(")"))
+                .map(item -> "方法".concat(item.getPropertyPath().toString()).concat("值是 ")
+                        .concat(Objects.toString(item.getInvalidValue()))
+                        .concat("失败原因是:")
+                        .concat(item.getMessage()))
                 .collect(Collectors.joining(";"));
 
         return Response.ok()

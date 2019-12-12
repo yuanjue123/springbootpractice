@@ -1,8 +1,8 @@
 package com.example;
 
-import com.example.application.ExceptionHandler;
-import com.example.application.ResponseHandler;
-import com.example.application.ValidExceptionHandler;
+import com.example.config.ExceptionHandler;
+import com.example.config.ResponseHandler;
+import com.example.config.ValidExceptionHandler;
 import com.example.config.ObjectMapperResolver;
 import com.example.config.ValidationConfigContextResolver;
 import org.glassfish.jersey.jackson.JacksonFeature;

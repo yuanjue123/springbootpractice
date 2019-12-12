@@ -1,4 +1,4 @@
-package com.example.application;
+package com.example.config;
 
 import com.example.param.RestResponse;
 import org.glassfish.jersey.internal.guava.Maps;

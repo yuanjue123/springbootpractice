@@ -4,7 +4,6 @@ import org.glassfish.jersey.server.validation.ValidationConfig;
 import org.glassfish.jersey.server.validation.internal.InjectingConstraintValidatorFactory;
 
 import javax.validation.ParameterNameProvider;
-import javax.validation.Validation;
 import javax.ws.rs.container.ResourceContext;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.ext.ContextResolver;
