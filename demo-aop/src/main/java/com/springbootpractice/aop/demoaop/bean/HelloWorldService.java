@@ -1,5 +1,7 @@
 package com.springbootpractice.aop.demoaop.bean;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Objects;
 
 /**
@@ -7,7 +9,7 @@ import java.util.Objects;
  * @author carter
  * 创建时间： 2020年01月02日 9:42 上午
  **/
-
+@Service
 public class HelloWorldService implements IHelloWorld {
     /**
      * 问候
